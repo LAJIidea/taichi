@@ -15,6 +15,8 @@ if (NOT DEFINED TI_VERSION_MAJOR)
     set(TI_VERSION_PATCH 0)
 endif()
 
+set(CMAKE_CXX_FLAGS "-g -O0")
+
 set(CMAKE_CXX_STANDARD 17)
 
 execute_process(
@@ -225,3 +227,8 @@ if (TI_WITH_GRAPHVIZ)
       WORKING_DIRECTORY "${CMAKE_BINARY_DIR}"
   )
 endif()
+
+set(TI_WITH_MLIR ON)
+if (TI_WITH_MLIR)
+    add_subdirectory(mlir)
+endif ()

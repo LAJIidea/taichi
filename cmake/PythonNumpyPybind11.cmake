@@ -12,4 +12,5 @@ message("    numpy include: ${NUMPY_INCLUDE_DIR}")
 
 include_directories(${NUMPY_INCLUDE_DIR})
 
+set(pybind11_DIR D://dev//libs//pybind//share//cmake//pybind11)
 find_package(pybind11 CONFIG REQUIRED)
