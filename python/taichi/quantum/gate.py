@@ -1,6 +1,6 @@
-import taichi as ti
-from taichi.quantum.register import QuBit, Register
+from taichi.qtype.register import QuBit, Register
 from taichi.lang.exception import TaichiRuntimeError
+from taichi.lang.kernel_impl import func
 
 
 class QGate:
@@ -23,41 +23,41 @@ class QGate:
             self.ctrls.append(condition)
 
 
-@ti.func
+@func
 def h(q: QuBit):
     pass
 
 
-@ti.func
+@func
 def x(q: QuBit):
     pass
 
 
-@ti.func
+@func
 def y(q: QuBit):
     pass
 
 
-@ti.func
+@func
 def z(q: QuBit):
     pass
 
 
-@ti.func
+@func
 def cnot(target: QuBit, ctrl: QuBit):
     pass
 
 
-@ti.func
+@func
 def phase(phi: float):
     pass
 
 
-@ti.func
+@func
 def measure(target: Register) -> int:
     pass
 
 
-@ti.func
+@func
 def u_measure(target: Register) -> int:
     pass

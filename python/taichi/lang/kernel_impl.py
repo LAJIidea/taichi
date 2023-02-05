@@ -30,6 +30,7 @@ from taichi.lang.util import (cook_dtype, has_paddle, has_pytorch,
 from taichi.types import (ndarray_type, primitive_types, sparse_matrix_builder,
                           template, texture_type)
 from taichi.types.utils import is_signed
+from taichi.qtype.register import QRegister, QuBit, Callable
 
 from taichi import _logging
 
@@ -341,6 +342,10 @@ class Func:
                 elif isinstance(annotation, template):
                     pass
                 elif isinstance(annotation, primitive_types.RefType):
+                    pass
+                elif isinstance(annotation, (QRegister, QuBit)):
+                    pass
+                elif isinstance(annotation, Callable):
                     pass
                 else:
                     raise TaichiSyntaxError(

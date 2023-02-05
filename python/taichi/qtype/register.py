@@ -1,7 +1,10 @@
 import itertools
 import numpy as np
+import typing
 from taichi.lang.util import python_scope, taichi_scope
 from taichi.lang.exception import TaichiRuntimeError
+
+Callable = typing.Callable
 
 
 class Register:
@@ -133,3 +136,10 @@ def local_qreg(size):
             >>> anc = local_qreg(3)
     """
     return LocalRegister(size)
+
+
+def KernelSignature(*args):
+    """
+    KernelSignature can be viewed as function argument
+    """
+    return Callable[list(args), None]

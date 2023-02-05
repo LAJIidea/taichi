@@ -1,3 +1,5 @@
-from taichi.quantum.gate import *
-from taichi.quantum.register import *
-from taichi.quantum.special import *
+from .gate import h, cnot, x, y, z, phase, measure, u_measure
+from .special import uncompute, apply
+
+del gate
+del special
